@@ -13,8 +13,16 @@ module.exports = function (options) {
 	var uri = 'mongodb://';
 
 	// username and password
-	if (options.username && options.password) {
-		uri += options.username + ':' + options.password + '@';
+	if (options.username) {
+		uri += options.username;
+	}
+	
+	if (options.password) {
+		uri += ':' + options.password ;
+	}
+	
+	if (options.username) {
+		uri += '@';
 	}
 
 	// host
